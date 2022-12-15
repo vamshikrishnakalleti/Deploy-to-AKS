@@ -26,13 +26,14 @@ stages:
     #     Dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
     #     tags: |
     #       $(tag)
+    
     - task: Docker@2
       inputs:
         containerRegistry: 'docker_vivek'
         repository: 'publicrepo'
         command: 'buildAndPush'
         Dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
-    
+        buildContext: '$(Build.SourcesDirectory)/app/Dockerfile'
     # - task: PublishPipelineArtifact@1
     #   inputs:
     #     targetPath: '$(Pipeline.Workspace)/s/kubernetes'
