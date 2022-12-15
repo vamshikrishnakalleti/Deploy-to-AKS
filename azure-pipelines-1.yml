@@ -32,6 +32,6 @@ stages:
           latest
     
 
-# - stage: Deploy
-#   displayName: Deploy to Dev
-#   dependsOn: Build
+- stage: Deploy
+  displayName: Deploy to Dev
+  dependsOn: Build
