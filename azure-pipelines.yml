@@ -33,7 +33,7 @@ stages:
         repository: 'publicrepo'
         command: 'buildAndPush'
         Dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
-        buildContext: '$(Build.SourcesDirectory)/app/Dockerfile'
+        buildContext: '/home/vsts/work/1/s/app/Dockerfile'
     # - task: PublishPipelineArtifact@1
     #   inputs:
     #     targetPath: '$(Pipeline.Workspace)/s/kubernetes'
