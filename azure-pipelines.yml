@@ -33,12 +33,19 @@ stages:
     #     repository: 'publicrepo'
     #     command: 'buildAndPush'
     #     Dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
+    # - task: Docker@2
+    #   inputs:
+    #     containerRegistry: 'vigneshwarashoppingacr'
+    #     repository: 'vigneshwarashoppingacr'
+    #     command: 'buildAndPush'
+    #     Dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
     - task: Docker@2
       inputs:
         containerRegistry: 'vigneshwarashoppingacr'
-        repository: 'vigneshwarashoppingacr'
+        repository: '$(imageRepo)'
         command: 'buildAndPush'
         Dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
+    
     # - task: PublishPipelineArtifact@1
     #   inputs:
     #     targetPath: '$(Pipeline.Workspace)/s/kubernetes'
