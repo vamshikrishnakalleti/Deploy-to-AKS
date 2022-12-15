@@ -25,12 +25,11 @@ stages:
       inputs:
         containerRegistry: 'vigneshwarashoppingacr'
         repository: '$(imageRepo)'
-        command: 'build'
+        command: 'buildAndPush'
         Dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
         tags: |
-          $(tag)
+          $(Build.BuildId)
           latest
-    
 
 - stage: Deploy
   displayName: Deploy to Dev
