@@ -21,16 +21,6 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
-    # - task: Docker@2
-    #   displayName: Build an image
-    #   inputs:
-    #     containerRegistry: 'docker_vivek'
-    #     repository: '$(imageRepo)'
-    #     command: 'buildAndPush'
-    #     Dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
-    #     tags: |
-    #       $(tag)
-    #       latest
     - task: Docker@2
       inputs:
         containerRegistry: 'vigneshwarashoppingacr'
