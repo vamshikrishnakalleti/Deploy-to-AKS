@@ -27,24 +27,24 @@ stages:
     #     tags: |
     #       $(tag)
     
-    # - task: Docker@2
-    #   inputs:
-    #     containerRegistry: 'docker_vivek'
-    #     repository: 'publicrepo'
-    #     command: 'buildAndPush'
-    #     Dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'docker_vivek'
+        repository: '$(imageRepo)'
+        command: 'buildAndPush'
+        Dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
     # - task: Docker@2
     #   inputs:
     #     containerRegistry: 'vigneshwarashoppingacr'
     #     repository: 'vigneshwarashoppingacr'
     #     command: 'buildAndPush'
     #     Dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'vigneshwarashoppingacr'
-        repository: '$(imageRepo)'
-        command: 'buildAndPush'
-        Dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
+    # - task: Docker@2
+    #   inputs:
+    #     containerRegistry: 'vigneshwarashoppingacr'
+    #     repository: '$(imageRepo)'
+    #     command: 'buildAndPush'
+    #     Dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
     
     # - task: PublishPipelineArtifact@1
     #   inputs:
